@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bisi Kaapi — Deployment Architecture</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  body { margin: 0; background: var(--bk-paper, #EFE6D4); font-family: var(--font-sans, sans-serif); color: var(--text-primary, #381E0D); padding: 48px 32px 80px; }
+  h1 { font-family: var(--font-display, sans-serif); font-weight: 700; font-size: 30px; margin: 0 0 6px; }
+  .sub { color: var(--text-secondary, #6b5642); font-size: 14px; margin-bottom: 36px; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  h2 { font-family: var(--font-display, sans-serif); font-size: 18px; font-weight: 700; margin: 48px 0 18px; padding-bottom: 8px; border-bottom: 2px solid var(--color-primary, #A8481F); }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .row { display: flex; justify-content: center; align-items: stretch; gap: 22px; flex-wrap: wrap; }
+  .arrow-down { font-size: 20px; color: var(--color-primary, #A8481F); line-height: 1; margin: 2px 0; }
+  .box { border: 1.5px solid var(--border-strong, #C9B79A); background: var(--surface-card, #FFFDF8); border-radius: 10px; padding: 12px 16px; text-align: center; min-width: 150px; box-shadow: 0 1px 2px rgba(56,30,13,0.06); }
+  .box .t { font-weight: 700; font-size: 13.5px; }
+  .box .d { font-size: 11px; color: var(--text-muted, #8a7863); margin-top: 3px; line-height: 1.4; }
+  .box.accent { background: var(--color-primary, #A8481F); border-color: var(--color-primary, #A8481F); color: #FFF7EE; }
+  .box.accent .d { color: rgba(255,247,238,0.8); }
+  .box.dark { background: var(--bk-bark, #381E0D); border-color: var(--bk-bark, #381E0D); color: #FFF7EE; }
+  .box.dark .d { color: rgba(255,247,238,0.7); }
+  .tier { border: 1.5px dashed var(--border-default, #DDD0BA); border-radius: 14px; padding: 20px 18px 22px; position: relative; }
+  .tier .label { position: absolute; top: -11px; left: 16px; background: var(--bk-paper, #EFE6D4); padding: 0 8px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-accent, #A8481F); }
+  .sidebox { display: flex; flex-direction: column; gap: 10px; }
+  .note { font-size: 12.5px; color: var(--text-secondary, #6b5642); line-height: 1.6; margin-top: 10px; max-width: 640px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Bisi Kaapi OS — Deployment Architecture</h1>
+  <div class="sub">Two views: production AWS setup, and a minimal single-web-server alternative.</div>
+
+  <h2>1. AWS (production, scales independently per tier)</h2>
+
+  <div class="col">
+    <div class="box dark"><div class="t">Users</div><div class="d">browser · mobile web</div></div>
+    <div class="arrow-down">↓</div>
+    <div class="box"><div class="t">Route 53</div><div class="d">DNS — api.bisikaapi.coffee / app.bisikaapi.coffee</div></div>
+    <div class="arrow-down">↓</div>
+  </div>
+
+  <div class="row">
+    <div class="tier">
+      <span class="label">Frontend (static)</span>
+      <div class="col">
+        <div class="box accent"><div class="t">CloudFront</div><div class="d">CDN + TLS</div></div>
+        <div class="arrow-down">↓</div>
+        <div class="box"><div class="t">S3</div><div class="d">Hub · Marketing · Shop · Mobile web · Orchestrator · each ops portal — one bucket/prefix per app, built by Vite</div></div>
+      </div>
+    </div>
+
+    <div class="tier">
+      <span class="label">API + Realtime</span>
+      <div class="col">
+        <div class="box accent"><div class="t">Application Load Balancer</div><div class="d">TLS, path routing, sticky sessions for /ws</div></div>
+        <div class="arrow-down">↓</div>
+        <div class="box"><div class="t">ECS Fargate</div><div class="d">Node/TS API container (this project's server/) — autoscaling task group, REST + WebSocket on one service</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down" style="text-align:center; margin-top: 8px;">↓</div>
+
+  <div class="row">
+    <div class="tier">
+      <span class="label">Data</span>
+      <div class="sidebox">
+        <div class="box"><div class="t">RDS PostgreSQL</div><div class="d">Multi-AZ, private subnet — orders, inventory, roles, integrations, finance…</div></div>
+        <div class="box"><div class="t">ElastiCache (Redis)</div><div class="d">optional — WS fan-out across multiple API tasks, rate limiting</div></div>
+      </div>
+    </div>
+    <div class="tier">
+      <span class="label">Supporting services</span>
+      <div class="sidebox">
+        <div class="box"><div class="t">Secrets Manager</div><div class="d">DB creds, JWT secret, integration API keys</div></div>
+        <div class="box"><div class="t">S3 (assets)</div><div class="d">product photos, illustrations, uploads</div></div>
+        <div class="box"><div class="t">CloudWatch</div><div class="d">logs, metrics, alarms</div></div>
+      </div>
+    </div>
+    <div class="tier">
+      <span class="label">CI/CD</span>
+      <div class="sidebox">
+        <div class="box"><div class="t">GitHub Actions</div><div class="d">build &amp; test on push</div></div>
+        <div class="box"><div class="t">ECR</div><div class="d">API container images</div></div>
+        <div class="box"><div class="t">CodeDeploy / ECS rolling update</div><div class="d">zero-downtime API deploys; S3 sync + CloudFront invalidation for frontends</div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">All compute (ALB, ECS, RDS, ElastiCache) sits in private subnets of a VPC; only the ALB and CloudFront are internet-facing. Each ops portal and customer surface deploys independently to its own S3 prefix/CloudFront behavior, so a marketing-site release never touches Café Ops. Swap Cognito in for the custom JWT auth in <code>server/auth.ts</code> if you want managed user pools instead of owning password storage.</p>
+
+  <h2>2. Minimal — single web server (small scale / cheap start)</h2>
+  <div class="col">
+    <div class="box dark"><div class="t">Users</div></div>
+    <div class="arrow-down">↓</div>
+    <div class="box accent"><div class="t">Nginx</div><div class="d">TLS via Let's Encrypt · reverse proxy</div></div>
+    <div class="arrow-down">↓</div>
+    <div class="row" style="margin-top: 4px;">
+      <div class="box"><div class="t">Static files</div><div class="d">served directly by Nginx — all ui_kits/ frontend apps</div></div>
+      <div class="box"><div class="t">Node API (PM2)</div><div class="d">server/ — proxied at /api and /ws</div></div>
+      <div class="box"><div class="t">Postgres</div><div class="d">same VM or a managed instance (Neon, Supabase, RDS)</div></div>
+    </div>
+  </div>
+  <p class="note">One EC2 instance (or any VPS — Lightsail, DigitalOcean, Hetzner): Nginx serves the static frontends and reverse-proxies <code>/api</code> + <code>/ws</code> to the Node process managed by PM2. Good for demos, pilots, or low-traffic launches — migrate to the AWS layout above when you need independent scaling, zero-downtime deploys, or Multi-AZ durability.</p>
+</div>
+</body>
+</html>

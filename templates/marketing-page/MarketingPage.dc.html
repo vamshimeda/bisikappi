@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Marketing Page" description="Branded Bisi Kaapi marketing landing starter — hero, product cards, CTA" -->
+<helmet>
+<script src="./ds-base.js"></script>
+</helmet>
+<div style="font-family: var(--font-sans); color: var(--text-primary); background: var(--color-bg); min-height: 100vh;">
+
+  <header style="display: flex; align-items: center; gap: 12px; max-width: 1160px; margin: 0 auto; padding: 22px 40px;">
+    <img src="../../assets/logo/bisi-kaapi-mark.png" alt="" width="42" height="42" />
+    <span style="font-family: var(--font-display); font-weight: 700; font-size: 26px; color: var(--text-primary);">Bisi Kaapi</span>
+    <nav style="display: flex; gap: 26px; margin-left: 22px;">
+      <a href="#" style="font-size: 15px; font-weight: 500; color: var(--text-brand); text-decoration: none;">Menu</a>
+      <a href="#" style="font-size: 15px; font-weight: 500; color: var(--text-secondary); text-decoration: none;">Beans</a>
+      <a href="#" style="font-size: 15px; font-weight: 500; color: var(--text-secondary); text-decoration: none;">Our Story</a>
+    </nav>
+  </header>
+
+  <section style="max-width: 1160px; margin: 0 auto; padding: 56px 40px 72px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;">
+    <div>
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-brand);">Estd. with love · ಬಿಸಿ ಕಾಪಿ</div>
+      <h1 style="font-family: var(--font-display); font-weight: 600; font-size: 66px; line-height: 1.04; letter-spacing: -0.02em; margin: 16px 0 0;">Slow down,<br /><span style="font-style: italic; color: var(--text-brand);">savour</span> the brew.</h1>
+      <p style="font-size: 18px; color: var(--text-secondary); line-height: 1.6; margin: 20px 0 0; max-width: 46ch;">Every brew celebrates the warmth of home, the richness of tradition, and the joy of slowing down.</p>
+      <div style="display: flex; gap: 14px; margin-top: 30px;">
+        <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Button" size="lg" hint-size="190px,52px">Explore the menu</x-import>
+        <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Button" size="lg" variant="secondary" hint-size="150px,52px">Shop beans</x-import>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-top: 26px;">
+        <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Rating" value="4.8" count="3400" hint-size="180px,22px"></x-import>
+        <span style="font-size: 14px; color: var(--text-muted);">loved by 3,400+ regulars</span>
+      </div>
+    </div>
+    <div style="background: var(--surface-dark); border-radius: var(--radius-2xl); padding: 28px; display: flex; justify-content: center; box-shadow: var(--shadow-lg);">
+      <img src="../../assets/illustrations/story-arch.png" alt="Bisi Kaapi story" style="height: 400px; max-width: 100%;" />
+    </div>
+  </section>
+
+  <section style="background: var(--surface-sunken);">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 40px;">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-brand);">From our roastery</div>
+      <h2 style="font-family: var(--font-display); font-weight: 600; font-size: 42px; margin: 12px 0 32px;">Take a little warmth home</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;">
+
+        <div style="background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden;">
+          <div style="background: var(--bk-paper); height: 190px; display: flex; align-items: center; justify-content: center; position: relative;">
+            <div style="position: absolute; top: 14px; left: 14px;"><x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Badge" tone="accent" hint-size="90px,22px">Bestseller</x-import></div>
+            <img src="../../assets/illustrations/motif-coffee-bean.png" alt="" style="max-height: 140px;" />
+          </div>
+          <div style="padding: 20px;">
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 20px; margin: 0;">Mysore Filter Blend</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); margin: 4px 0 12px;">Chikmagalur · medium roast</p>
+            <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Rating" value="4.8" count="212" size="15" hint-size="160px,20px"></x-import>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 16px;">
+              <span style="font-family: var(--font-mono); font-weight: 600; font-size: 20px;">₹240</span>
+              <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Button" size="sm" hint-size="70px,36px">Add</x-import>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden;">
+          <div style="background: var(--bk-paper); height: 190px; display: flex; align-items: center; justify-content: center; position: relative;">
+            <div style="position: absolute; top: 14px; left: 14px;"><x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Badge" tone="brand" hint-size="60px,22px">New</x-import></div>
+            <img src="../../assets/illustrations/motif-coffee-plant.png" alt="" style="max-height: 140px;" />
+          </div>
+          <div style="padding: 20px;">
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 20px; margin: 0;">Coorg Single Estate</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); margin: 4px 0 12px;">Coorg · medium-dark</p>
+            <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Rating" value="4.7" count="96" size="15" hint-size="160px,20px"></x-import>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 16px;">
+              <span style="font-family: var(--font-mono); font-weight: 600; font-size: 20px;">₹320</span>
+              <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Button" size="sm" hint-size="70px,36px">Add</x-import>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden;">
+          <div style="background: var(--bk-paper); height: 190px; display: flex; align-items: center; justify-content: center;">
+            <img src="../../assets/illustrations/motif-filter-cup.png" alt="" style="max-height: 140px;" />
+          </div>
+          <div style="padding: 20px;">
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 20px; margin: 0;">Davara Tumbler Set</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); margin: 4px 0 12px;">Brass · serves 2</p>
+            <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Rating" value="4.9" count="154" size="15" hint-size="160px,20px"></x-import>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 16px;">
+              <span style="font-family: var(--font-mono); font-weight: 600; font-size: 20px;">₹690</span>
+              <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Button" size="sm" hint-size="70px,36px">Add</x-import>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 720px; margin: 0 auto; padding: 80px 40px; text-align: center;">
+    <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Divider" decorative="true" hint-size="100%,20px"></x-import>
+    <h2 style="font-family: var(--font-display); font-weight: 600; font-size: 38px; margin: 26px 0 12px;">Fresh beginnings, unforgettable aromas.</h2>
+    <p style="font-size: 16px; color: var(--text-secondary); margin: 0 0 24px;">Join the list for new roasts, seasonal brews, and quiet invitations to slow down.</p>
+    <x-import component-from-global-scope="BisiKaapiDesignSystem_2fbe5e.Button" size="lg" hint-size="150px,52px">Join us</x-import>
+  </section>
+
+  <footer style="background: var(--surface-dark); color: var(--text-on-dark); text-align: center; padding: 28px 40px; font-size: 13px; opacity: 0.85;">
+    © 2026 Bisi Kaapi · ಬಿಸಿ ಕಾಪಿ · slow down, savour the brew.
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

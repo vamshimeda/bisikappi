@@ -1,0 +1,22 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Big Quote Slide" subtitle="Full-bleed tagline moment" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  html,body{margin:0;height:100%}
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#1c0e05}
+  #slide{width:1280px;height:720px;flex-shrink:0;box-sizing:border-box;position:relative;overflow:hidden;background:var(--bk-terracotta-600);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 120px;}
+  .ov{font-family:var(--font-sans);font-size:15px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase}
+  .disp{font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;margin:0;line-height:1.02}
+  .body{font-family:var(--font-sans);line-height:1.6}
+  .mono{font-family:var(--font-mono)}
+  .kan{font-family:var(--font-script);font-weight:600}
+  
+</style></head><body>
+<div id="stage"><div id="slide">
+
+  <div style="font-family:var(--font-display);font-size:120px;color:rgba(255,247,238,0.25);line-height:0.5;height:50px">“</div>
+  <p class="disp" style="font-size:62px;font-style:italic;color:var(--bk-paper);margin-top:20px">Slow down,<br/>savour the brew.</p>
+  <div class="ov" style="color:var(--bk-brass-300);margin-top:40px">The Bisi Kaapi promise</div>
+</div></div>
+<script>function fit(){var s=Math.min(innerWidth/1280,innerHeight/720);document.getElementById('slide').style.transform='scale('+s+')'}addEventListener('resize',fit);fit();</script>
+</body></html>

@@ -1,0 +1,109 @@
+/* Bisi Kaapi — Color System · official "Coffee Chakra" palette (from brand Figma)
+ * Deep Espresso · Roasted Cherry · Caramel Crema · Steamed Milk · Sweet Latte
+ */
+:root {
+  /* ---- Brand base ramps ---- */
+
+  /* Coffee / roast browns (the ink + dark surfaces) — anchored on Deep Espresso */
+  --bk-espresso:   #381E0D; /* Deep Espresso — primary ink */
+  --bk-coffee-900: #41260F;
+  --bk-coffee-800: #503015;
+  --bk-coffee-700: #65400B; /* roast (brand brown #744107 family) */
+  --bk-coffee-600: #7C5022;
+  --bk-coffee-500: #94652F;
+
+  /* Roasted Cherry → Caramel (primary action / energy) */
+  --bk-terracotta-700: #6E2615; /* Roasted Cherry deep */
+  --bk-terracotta-600: #8A3A20;
+  --bk-terracotta-500: #A8481F; /* primary — roasted caramel */
+  --bk-terracotta-400: #C7703A;
+  --bk-terracotta-300: #DD9A6A;
+  --bk-terracotta-100: #F4DEC9;
+
+  /* Caramel / amber gold (accent / dividers / highlights) */
+  --bk-brass-700: #9A6A1E;
+  --bk-brass-600: #BC8324;
+  --bk-brass-500: #D89A33; /* accent — caramel amber */
+  --bk-brass-400: #E6B45C;
+  --bk-brass-300: #EFCD8C;
+  --bk-brass-100: #F7E9C9;
+
+  /* Sweet Latte / tan (warm mids) */
+  --bk-latte: #E4C4AD; /* Sweet Latte */
+
+  /* Roasted Cherry (deep heritage accent) */
+  --bk-maroon: #7C2D1C;
+
+  /* ---- Warm neutrals (tan-tinted, never cold gray) — Sweet Latte / Cappuccino family ---- */
+  --bk-warm-950: #241307;
+  --bk-warm-900: #381E0D;
+  --bk-warm-800: #4E331E;
+  --bk-warm-700: #5E4630;
+  --bk-warm-600: #7C6047;
+  --bk-warm-500: #94795E;
+  --bk-warm-400: #AE9275;
+  --bk-warm-300: #C9B295; /* Cappuccino-ish */
+  --bk-warm-200: #DAC2A3; /* Cappuccino (dominant brand fill) */
+  --bk-warm-150: #E4D2B8;
+  --bk-warm-100: #EDE0CB;
+  --bk-warm-50:  #F5ECDB;
+
+  /* Cream / paper / milk (page + card surfaces) — sampled from brand creatives */
+  --bk-paper: #EFE6D4; /* default page background — Steamed Milk / cappuccino blend */
+  --bk-cream: #E5D6BD; /* sunken / alt surface — Sweet Latte tint */
+  --bk-milk:  #FBF6EC; /* raised cards — warm near-white */
+
+  /* Full-bleed brand surfaces */
+  --bk-bark:     #2E1608; /* deep espresso-brown — dark sections, story panels */
+  --bk-bark-700: #45260F; /* lighter bark for cards on dark */
+  --bk-marigold: #FB8B24; /* Caramel Crema — signature vivid orange */
+  --bk-marigold-600: #E5771A;
+
+  /* ---- Semantic flavor colors (spice-derived, warm-leaning) ---- */
+  --bk-cardamom: #5E7A4F; /* success */
+  --bk-turmeric: #D99A2B; /* warning */
+  --bk-chili:    #A8392A; /* error / danger */
+  --bk-indigo:   #4F6D7A; /* info — muted slate-teal */
+
+  /* ================= SEMANTIC ALIASES ================= */
+
+  /* Surfaces */
+  --color-bg:            var(--bk-paper);
+  --surface-card:        var(--bk-milk);
+  --surface-sunken:      var(--bk-cream);
+  --surface-inverse:     var(--bk-espresso);
+  --surface-dark:        var(--bk-bark);     /* deep-brown full-bleed sections */
+  --surface-brand:       var(--bk-terracotta-500);
+  --surface-marigold:    var(--bk-marigold); /* vivid orange full-bleed sections */
+
+  /* Text */
+  --text-primary:   var(--bk-espresso);
+  --text-secondary: var(--bk-warm-700);
+  --text-muted:     var(--bk-warm-500);
+  --text-on-dark:   var(--bk-warm-50);
+  --text-on-brand:  #FFF7EE;
+  --text-brand:     var(--bk-terracotta-600);
+  --text-accent:    var(--bk-brass-700);
+
+  /* Interactive — primary (terracotta) */
+  --color-primary:        var(--bk-terracotta-500);
+  --color-primary-hover:  var(--bk-terracotta-600);
+  --color-primary-active: var(--bk-terracotta-700);
+
+  /* Interactive — accent (brass) */
+  --color-accent:         var(--bk-brass-500);
+  --color-accent-hover:   var(--bk-brass-600);
+
+  /* Borders & lines */
+  --border-subtle:  var(--bk-warm-150);
+  --border-default: var(--bk-warm-200);
+  --border-strong:  var(--bk-warm-300);
+  --border-brand:   var(--bk-terracotta-500);
+  --ring-focus:     #A8481F66;
+
+  /* Semantic surfaces + text */
+  --success: var(--bk-cardamom); --success-soft: #E6EDDF;
+  --warning: var(--bk-turmeric); --warning-soft: #F8EACD;
+  --danger:  var(--bk-chili);    --danger-soft:  #F2D9D3;
+  --info:    var(--bk-indigo);   --info-soft:    #DCE6E9;
+}

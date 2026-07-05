@@ -1,0 +1,26 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Stats Slide" subtitle="Three big figures in mono" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  html,body{margin:0;height:100%}
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#1c0e05}
+  #slide{width:1280px;height:720px;flex-shrink:0;box-sizing:border-box;position:relative;overflow:hidden;background:var(--bk-paper);display:flex;flex-direction:column;justify-content:center;padding:0 96px;}
+  .ov{font-family:var(--font-sans);font-size:15px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase}
+  .disp{font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;margin:0;line-height:1.02}
+  .body{font-family:var(--font-sans);line-height:1.6}
+  .mono{font-family:var(--font-mono)}
+  .kan{font-family:var(--font-script);font-weight:600}
+  .stat{flex:1}.num{font-family:var(--font-mono);font-weight:600;font-size:84px;color:var(--color-primary);line-height:1}.cap{font-family:var(--font-sans);font-size:19px;color:var(--text-secondary);margin-top:10px}
+</style></head><body>
+<div id="stage"><div id="slide">
+
+  <div class="ov" style="color:var(--text-brand)">By the numbers</div>
+  <h2 class="disp" style="font-size:48px;color:var(--text-primary);margin:14px 0 56px">A name people already loved</h2>
+  <div style="display:flex;gap:64px">
+    <div class="stat"><div class="num">3,400+</div><div class="cap">regulars served every week</div></div>
+    <div class="stat"><div class="num">12</div><div class="cap">estates across the Western Ghats</div></div>
+    <div class="stat"><div class="num">4.8★</div><div class="cap">average rating, 1,500+ reviews</div></div>
+  </div>
+</div></div>
+<script>function fit(){var s=Math.min(innerWidth/1280,innerHeight/720);document.getElementById('slide').style.transform='scale('+s+')'}addEventListener('resize',fit);fit();</script>
+</body></html>

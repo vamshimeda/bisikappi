@@ -1,0 +1,11 @@
+/* Bisi Kaapi — Webfonts · official brand typefaces (from brand Figma)
+ * Display : Figtree      (headlines, wordmark — brand display, bold)
+ * Sans    : Satoshi      (body & UI — loaded from Fontshare)
+ * Accent  : Readex Pro   (numerals, labels, supporting)
+ * Mono    : Spline Sans Mono (prices, specs)
+ * Script  : Anek Kannada (Kannada accent — ಬಿಸಿ ಕಾಪಿ; brand uses a custom Kannada lockup)
+ * NOTE: Satoshi is served from Fontshare (free). Comico (brand decorative) is not
+ * webfont-available — substituted by Figtree display. Flagged for self-hosting.
+ */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Readex+Pro:wght@300;400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&family=Anek+Kannada:wght@400;500;600;700&display=swap');

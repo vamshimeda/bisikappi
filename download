@@ -1,0 +1,3 @@
+project/server/node_modules/
+project/server/dist/
+project/server/.env

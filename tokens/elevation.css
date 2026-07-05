@@ -1,0 +1,36 @@
+/* Bisi Kaapi — Radii, borders, elevation, motion
+ * Soft, hand-warmed rounding. Shadows are brown-tinted, never neutral gray.
+ */
+:root {
+  /* Corner radii — gently rounded, like a cup's lip */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
+  --radius-xl:   28px;
+  --radius-2xl:  40px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* Borders */
+  --border-width: 1px;
+  --border-width-thick: 2px;
+
+  /* Elevation — warm espresso-tinted shadows */
+  --shadow-xs: 0 1px 2px rgba(43, 26, 18, 0.06);
+  --shadow-sm: 0 2px 6px rgba(43, 26, 18, 0.08);
+  --shadow-md: 0 6px 18px rgba(43, 26, 18, 0.10);
+  --shadow-lg: 0 16px 40px rgba(43, 26, 18, 0.14);
+  --shadow-xl: 0 28px 64px rgba(43, 26, 18, 0.18);
+  /* Inset warmth for sunken wells */
+  --shadow-inset: inset 0 1px 3px rgba(43, 26, 18, 0.10);
+  /* Brass focus glow */
+  --shadow-focus: 0 0 0 3px var(--ring-focus);
+
+  /* Motion — calm, never bouncy */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.45, 0, 0.25, 1); /* @kind other */
+  --duration-fast: 120ms; /* @kind other */
+  --duration-base: 200ms; /* @kind other */
+  --duration-slow: 360ms; /* @kind other */
+}

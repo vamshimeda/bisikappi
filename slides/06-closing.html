@@ -1,0 +1,26 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Closing Slide" subtitle="Thank-you & contact" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  html,body{margin:0;height:100%}
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#1c0e05}
+  #slide{width:1280px;height:720px;flex-shrink:0;box-sizing:border-box;position:relative;overflow:hidden;background:radial-gradient(120% 90% at 20% 90%, rgba(196,154,72,0.12), transparent 55%), var(--bk-bark);display:flex;flex-direction:column;justify-content:center;padding:0 96px;}
+  .ov{font-family:var(--font-sans);font-size:15px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase}
+  .disp{font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;margin:0;line-height:1.02}
+  .body{font-family:var(--font-sans);line-height:1.6}
+  .mono{font-family:var(--font-mono)}
+  .kan{font-family:var(--font-script);font-weight:600}
+  
+</style></head><body>
+<div id="stage"><div id="slide">
+
+  <img src="../assets/logo/bisi-kaapi-mark-cream.png" alt="" style="width:84px;height:84px;margin-bottom:26px" />
+  <h2 class="disp" style="font-size:72px;color:var(--bk-paper)">Let's brew something<br/>together.</h2>
+  <div style="display:flex;gap:48px;margin-top:40px" class="body">
+    <div><div class="ov" style="color:var(--bk-brass-300);font-size:12px">Visit</div><div style="font-size:18px;color:rgba(255,247,238,0.85);margin-top:6px">Jayanagar · Bengaluru</div></div>
+    <div><div class="ov" style="color:var(--bk-brass-300);font-size:12px">Online</div><div style="font-size:18px;color:rgba(255,247,238,0.85);margin-top:6px">bisikaapi.coffee · @bisikaapi</div></div>
+  </div>
+  <div class="ov" style="color:rgba(255,247,238,0.4);position:absolute;bottom:48px;font-size:12px">Brand &amp; design by Nomadiic Horse Designs</div>
+</div></div>
+<script>function fit(){var s=Math.min(innerWidth/1280,innerHeight/720);document.getElementById('slide').style.transform='scale('+s+')'}addEventListener('resize',fit);fit();</script>
+</body></html>

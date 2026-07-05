@@ -1,0 +1,20 @@
+<!-- @dsCard group="Colors" viewport="700x172" name="Semantic — Spice Palette" subtitle="Status colors derived from the spice rack" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--surface-card); padding: 20px; font-family: var(--font-sans); }
+  .ramp { display: flex; gap: 10px; }
+  .col { flex: 1; min-width: 0; }
+  .sw { height: 76px; border-radius: var(--radius-md); border: 1px solid rgba(43,26,18,0.06); }
+  .nm { font-size: var(--text-2xs); font-weight: 600; color: var(--text-primary); margin-top: 8px; white-space: nowrap; }
+  .hex { font-family: var(--font-mono); font-size: var(--text-2xs); color: var(--text-muted); }
+</style></head><body>
+<div class="ramp">
+  <div class="col"><div class="sw" style="background:var(--success)"></div><div class="nm">cardamom · success</div><div class="hex">#5E7A4F</div></div>
+  <div class="col"><div class="sw" style="background:var(--success-soft);border:1px solid var(--border-default)"></div><div class="nm">success-soft</div><div class="hex">#E6EDDF</div></div>
+  <div class="col"><div class="sw" style="background:var(--warning)"></div><div class="nm">turmeric · warning</div><div class="hex">#D99A2B</div></div>
+  <div class="col"><div class="sw" style="background:var(--danger)"></div><div class="nm">chili · danger</div><div class="hex">#A8392A</div></div>
+  <div class="col"><div class="sw" style="background:var(--info)"></div><div class="nm">indigo · info</div><div class="hex">#4F6D7A</div></div>
+  <div class="col"><div class="sw" style="background:var(--info-soft);border:1px solid var(--border-default)"></div><div class="nm">info-soft</div><div class="hex">#DCE6E9</div></div>
+</div>
+</body></html>
