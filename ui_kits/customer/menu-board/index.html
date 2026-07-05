@@ -1,0 +1,117 @@
+<!-- @dsCard group="Café Menu" viewport="1280x720" name="Café Menu Board" subtitle="In-store 16:9 display — filter kaapi, espresso, kitchen" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bisi Kaapi — Menu Board</title>
+<link rel="stylesheet" href="../../../styles.css" />
+<style>
+  html, body { margin: 0; height: 100%; background: var(--bk-bark); }
+  #stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #2c0e02; }
+  #board {
+    width: 1280px; height: 720px; flex-shrink: 0;
+    background:
+      radial-gradient(120% 90% at 85% 0%, rgba(196,154,72,0.10), transparent 55%),
+      var(--bk-bark);
+    color: var(--text-on-dark); position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+    padding: 44px 56px 36px; box-sizing: border-box;
+  }
+  .head { display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 1.5px solid rgba(196,154,72,0.4); padding-bottom: 22px; }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .brand img { width: 64px; height: 64px; }
+  .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 44px; line-height: 0.9; color: var(--bk-paper); white-space: nowrap; }
+  .kan { font-family: var(--font-script); font-weight: 600; font-size: 20px; color: var(--bk-brass-300); margin-top: 2px; }
+  .hours { text-align: right; }
+  .hours .lbl { font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bk-brass-300); }
+  .hours .val { font-family: var(--font-mono); font-size: 15px; color: rgba(255,247,238,0.85); margin-top: 3px; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr 1.05fr; gap: 40px; flex: 1; padding-top: 26px; }
+  .sec-title { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 27px; color: var(--bk-brass-400); margin: 0 0 16px; }
+  .item { display: flex; align-items: baseline; gap: 10px; margin-bottom: 15px; }
+  .nm { font-family: var(--font-sans); font-size: 17px; font-weight: 500; color: var(--bk-paper); white-space: nowrap; }
+  .nm small { display: block; font-size: 12.5px; font-weight: 400; color: rgba(255,247,238,0.6); margin-top: 1px; }
+  .dots { flex: 1; border-bottom: 1.5px dotted rgba(255,247,238,0.22); transform: translateY(-4px); }
+  .pr { font-family: var(--font-mono); font-size: 16px; font-weight: 600; color: var(--bk-brass-300); }
+  .tagN { display: inline-block; font-family: var(--font-sans); font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bk-bark); background: var(--bk-brass-400); padding: 1px 6px; border-radius: 999px; margin-left: 7px; vertical-align: middle; }
+
+  .feature { position: relative; border-radius: var(--radius-xl); overflow: hidden; background: rgba(255,247,238,0.05); border: 1px solid rgba(196,154,72,0.3); padding: 22px 24px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .feature img { position: absolute; right: -28px; bottom: -18px; height: 188px; opacity: 0.4; }
+  .feature .fl { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bk-brass-300); position: relative; z-index: 2; }
+  .feature .fh { font-family: var(--font-display); font-weight: 600; font-size: 30px; line-height: 1.05; color: var(--bk-paper); margin: 8px 0 6px; position: relative; z-index: 2; max-width: 60%; }
+  .feature .fp { font-family: var(--font-sans); font-size: 13.5px; color: rgba(255,247,238,0.78); line-height: 1.5; position: relative; z-index: 2; max-width: 58%; }
+  .feature .fpr { font-family: var(--font-mono); font-weight: 600; font-size: 24px; color: var(--bk-brass-300); margin-top: 12px; position: relative; z-index: 2; }
+
+  .foot { display: flex; align-items: center; justify-content: space-between; border-top: 1.5px solid rgba(196,154,72,0.4); padding-top: 16px; margin-top: 6px; }
+  .foot .tag { font-family: var(--font-display); font-style: italic; font-size: 18px; color: rgba(255,247,238,0.8); }
+  .foot .meta { font-family: var(--font-sans); font-size: 12px; color: rgba(255,247,238,0.55); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="board">
+    <div class="head">
+      <div class="brand">
+        <img src="../../../assets/logo/bisi-kaapi-mark-cream.png" alt="" />
+        <div>
+          <div class="wordmark">Bisi Kaapi</div>
+          <div class="kan">ಬಿಸಿ ಕಾಫಿ</div>
+        </div>
+      </div>
+      <div class="hours">
+        <div class="lbl">Open daily</div>
+        <div class="val">6:30 am — 10:00 pm</div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h2 class="sec-title">Filter Kaapi</h2>
+        <div class="item"><span class="nm">Bisi Kaapi<small>The classic filter coffee</small></span><span class="dots"></span><span class="pr">₹40</span></div>
+        <div class="item"><span class="nm">Bella Kaapi<small>Jaggery-sweetened</small></span><span class="dots"></span><span class="pr">₹50</span></div>
+        <div class="item"><span class="nm">Davara Kaapi<small>Served the traditional way</small></span><span class="dots"></span><span class="pr">₹60</span></div>
+        <div class="item"><span class="nm">Badam Milk Kaapi<small>Almond &amp; saffron</small></span><span class="dots"></span><span class="pr">₹70</span></div>
+        <div class="item"><span class="nm">Sukku Kaapi<small>Dry ginger, no milk</small></span><span class="dots"></span><span class="pr">₹55</span></div>
+      </div>
+      <div>
+        <h2 class="sec-title">Espresso Bar</h2>
+        <div class="item"><span class="nm">Cortado<small>Equal parts, no foam</small></span><span class="dots"></span><span class="pr">₹140</span></div>
+        <div class="item"><span class="nm">Cappuccino<small></small></span><span class="dots"></span><span class="pr">₹160</span></div>
+        <div class="item"><span class="nm">Cardamom Latte<span class="tagN">New</span></span><span class="dots"></span><span class="pr">₹180</span></div>
+        <div class="item"><span class="nm">Cold Brew<small>18-hour, single origin</small></span><span class="dots"></span><span class="pr">₹190</span></div>
+        <div class="item"><span class="nm">Filter on Ice<small>Our kaapi, chilled</small></span><span class="dots"></span><span class="pr">₹120</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <div>
+          <h2 class="sec-title">From the Kitchen</h2>
+          <div class="item"><span class="nm">Masala Dosa</span><span class="dots"></span><span class="pr">₹90</span></div>
+          <div class="item"><span class="nm">Mysore Bonda (3)</span><span class="dots"></span><span class="pr">₹70</span></div>
+          <div class="item"><span class="nm">Filter Coffee Cake<span class="tagN">House</span></span><span class="dots"></span><span class="pr">₹120</span></div>
+        </div>
+        <div class="feature">
+          <img src="../../../assets/illustrations/motif-filter-cup.png" alt="" />
+          <div class="fl">Today's pour</div>
+          <div class="fh">Bella Kaapi</div>
+          <div class="fp">Jaggery-sweetened filter coffee — warmth of home in a steel tumbler.</div>
+          <div class="fpr">₹50</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="tag">Slow down, savour the brew.</span>
+      <span class="meta">All prices in ₹ · inclusive of taxes · ask for today's single-origin</span>
+    </div>
+  </div>
+</div>
+<script>
+  function fit() {
+    const board = document.getElementById('board');
+    const s = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+    board.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit); fit();
+</script>
+</body>
+</html>
