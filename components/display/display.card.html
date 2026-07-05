@@ -1,0 +1,60 @@
+<!-- @dsCard group="Components" viewport="700x430" name="Display & Layout" subtitle="Card · Avatar · Tabs · Accordion · Divider · Rating" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Display & Layout</title>
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--color-bg); padding: 22px; }
+  .grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px 26px; align-items: start; }
+  .lbl { font-family: var(--font-sans); font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-accent); margin-bottom: 9px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  const { Card, Avatar, Divider, Tabs, Accordion, Rating } = window.BisiKaapiDesignSystem_2fbe5e;
+  function Demo() {
+    return (
+      <div className="grid">
+        <div>
+          <div className="lbl">Card — raised & dark</div>
+          <Card variant="raised" interactive style={{ marginBottom: 12 }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-xl)', margin: 0 }}>Filter Coffee Blend</h3>
+            <p style={{ margin: '4px 0 10px', color: 'var(--text-secondary)', fontFamily: 'var(--font-sans)', fontSize: 'var(--text-sm)' }}>Chikmagalur · medium roast</p>
+            <Rating value={4.5} showValue count={128} />
+          </Card>
+          <Card variant="dark" padding={16}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-lg)' }}>Featured this week</div>
+            <div style={{ fontFamily: 'var(--font-sans)', fontSize: 'var(--text-sm)', opacity: 0.8, marginTop: 4 }}>Saved ₹40 on every 250g</div>
+          </Card>
+        </div>
+        <div>
+          <div className="lbl">Avatars</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+            <Avatar name="Asha R" size="sm" /><Avatar name="Bala K" size="md" /><Avatar name="Chitra" size="lg" />
+          </div>
+          <div className="lbl">Tabs</div>
+          <Tabs tabs={[{id:'hot',label:'Hot'},{id:'iced',label:'Iced'},{id:'beans',label:'Beans'}]} defaultValue="hot" />
+          <div style={{ marginTop: 16 }}><Divider label="Our Menu" /></div>
+        </div>
+        <div style={{ gridColumn: '1 / -1' }}>
+          <div className="lbl">Accordion</div>
+          <Accordion defaultOpen={['1']} items={[
+            {id:'1', title:'Where are the beans from?', content:'Estates across Chikmagalur & Coorg, roasted in small batches each week.'},
+            {id:'2', title:'Do you ship across India?', content:'Yes — orders reach most cities in 2–4 days.'},
+          ]} />
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>
